@@ -15421,6 +15421,48 @@ $</p>
 </div>
 </div>
 </div></section></section><section ><section >
+<div id="cell-id=fcb55a28" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Shoggoth with a smiley face analogy</strong></p>
+<ul>
+<li>The pretrained model is an untamed monster because it was trained on indiscriminate data scraped from the Internet</li>
+<li>This monster was then finetuned on higher quality data</li>
+<li>Then the finetuned model was further polished using RLHF to make it customer-appropriate</li>
+</ul>
+<p><strong>Alignment</strong> - Steering LLMs to intended goals and interests</p>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div id="cell-id=5024a0f6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>The pretrained model is an untamed monster because it was trained on</li>
+</ul>
+<p>indiscriminate data scraped from the Internet: misinformation, propaganda, conspiracy theories, or attacks against certain demographics.</p>
+<ul>
+<li>This monster was then finetuned on higher quality data –</li>
+</ul>
+<p>StackOverflow, Quora and human annotations – which makes it somewhat socially acceptable.</p>
+<ul>
+<li>Then the finetuned model was further polished using RLHF to make it customer-appropriate, finally we get a smiley face.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section ><section >
 <div id="cell-id=2e9c1e2a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15433,26 +15475,7 @@ $</p>
 </div>
 </div>
 </div>
-</div><aside class="notes">
-
-<div id="cell-id=fcb55a28" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Shoggoth with a smiley face analogy</strong></p>
-<ul>
-<li>The pretrained model is an untamed monster because it was trained on indiscriminate data scraped from the Internet: misinformation, propaganda, conspiracy theories, or attacks against certain demographics.</li>
-<li>This monster was then finetuned on higher quality data – StackOverflow, Quora and human annotations – which makes it somewhat socially acceptable.</li>
-<li>Then the finetuned model was further polished using RLHF to make it customer-appropriate, e.g. giving it a smiley face.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-</aside></section></section><section ><section >
+</div></section></section><section ><section >
 <div id="cell-id=68a18293" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15485,16 +15508,63 @@ $</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=c041b28a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=06690209" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Reinforcement-Learning-from-Human-Feedback-(RLHF)">Reinforcement Learning from Human Feedback (RLHF)<a class="anchor-link" href="#Reinforcement-Learning-from-Human-Feedback-(RLHF)">&#182;</a></h3><h4 id="Reward-model">Reward model<a class="anchor-link" href="#Reward-model">&#182;</a></h4><h4 id="Proximal-Policy-Optimization">Proximal Policy Optimization<a class="anchor-link" href="#Proximal-Policy-Optimization">&#182;</a></h4><ul>
+<h3 id="Reinforcement-Learning-from-Human-Feedback-(RLHF)">Reinforcement Learning from Human Feedback (RLHF)<a class="anchor-link" href="#Reinforcement-Learning-from-Human-Feedback-(RLHF)">&#182;</a></h3><p><strong>The goal of Alignment</strong></p>
+<p>Given a particular history, the objective is to maximise the probability 
+the model assigns to the sequence of tokens in the corresponding response.</p>
+<img src="img/imitation_game.jpeg" alt="The goal of Alignment" width="400"/>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div id="cell-id=bfcb2cbd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This can be viewed as a typical <strong>imitation learning</strong> setup, or <strong>behaviour cloning</strong><br />
+where we try to mimic an teachers'action distribution conditioned on an input state</p>
+<p>Teach the model by having it mimic how humans respond in conversations.<br />
+The model then creates an <strong>expert policy</strong>, which acts like a rule book for how the model should respond to requests.</p>
+
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section ><section >
+<div id="cell-id=85aabf9d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Reward-model">Reward model<a class="anchor-link" href="#Reward-model">&#182;</a></h4><p><strong>Logistic Regression for Scorecard</strong></p>
+<img src="img/reward_model.jpeg" alt="Reward model" width="400"/>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=851d86c4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Proximal-Policy-Optimization">Proximal Policy Optimization<a class="anchor-link" href="#Proximal-Policy-Optimization">&#182;</a></h4><ul>
 <li>Policy</li>
 <li>Policy gradient optimization algorithm for updating an existing policy to gain reward</li>
 </ul>
+<img src="img/policy_model.png" alt="Policy model" width="400"/>
+<p><a href="https://www.youtube.com/watch?v=VPRSBzXzavo">ref: How ChatGPT is Trained</a></p>
 
 </div>
 </div>
@@ -15538,12 +15608,12 @@ $</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="The-Process-of-using-ChatGPT">The Process of using ChatGPT<a class="anchor-link" href="#The-Process-of-using-ChatGPT">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div><aside class="notes">
+<h2 id="The-Process-of-using-ChatGPT">The Process of using ChatGPT<a class="anchor-link" href="#The-Process-of-using-ChatGPT">&#182;</a></h2><img src="img/usingChatGPT.png" alt="Using ChatGPT" width="500"/>
 
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
 <div id="cell-id=f6d20434" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15576,16 +15646,34 @@ $</p>
 </div>
 </div>
 </div>
-</div>
-</aside><aside class="notes">
-
+</div></section></section><section ><section >
 <div id="cell-id=20ce8361" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Debatable-Topics-and-Pitfalls-of-LLMs">Debatable Topics and Pitfalls of LLMs<a class="anchor-link" href="#Debatable-Topics-and-Pitfalls-of-LLMs">&#182;</a></h2><p>LLMs are extremely powerful, but there are debatable on what they are actually doing.</p>
+<h2 id="Debatable-Topics-and-Pitfalls-of-LLMs">Debatable Topics and Pitfalls of LLMs<a class="anchor-link" href="#Debatable-Topics-and-Pitfalls-of-LLMs">&#182;</a></h2><p>LLMs are extremely powerful, but it is debatable on what they are actually doing.</p>
+<ul>
+<li><strong>Stochastic parrot or not?</strong></li>
+<li><strong>Emergent abilities</strong></li>
+<li><strong>Hallucinations</strong></li>
+<li><strong>Bias</strong>:</li>
+<li><strong>Citing Sources on generations</strong></li>
+<li><strong>Prompt Hacking</strong></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div id="cell-id=96c98c18" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li><p><strong>Stochastic parrot or not?</strong>: Although large language models are good at generating convincing language, many people believe LLMa do not actually understand the meaning of the language it is processing</p>
 </li>
@@ -15607,38 +15695,25 @@ $</p>
 </div>
 </div>
 </div>
-</aside><aside class="notes">
-
-<div id="cell-id=96c98c18" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
-</div>
-</aside>
+</aside></section></section><section ><section >
 <div id="cell-id=424a601d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
+<h2 id="Prompt-Engineering">Prompt Engineering<a class="anchor-link" href="#Prompt-Engineering">&#182;</a></h2><h3 id="Prompts">Prompts<a class="anchor-link" href="#Prompts">&#182;</a></h3><h3 id="Prompting-Principles">Prompting Principles<a class="anchor-link" href="#Prompting-Principles">&#182;</a></h3>
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section ><section >
 <div id="cell-id=5b106237" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
+<h3 id="Iterative-Prompt-Development">Iterative Prompt Development<a class="anchor-link" href="#Iterative-Prompt-Development">&#182;</a></h3><h3 id="Common-Prompting-Work">Common Prompting Work<a class="anchor-link" href="#Common-Prompting-Work">&#182;</a></h3><h4 id="Summarising">Summarising<a class="anchor-link" href="#Summarising">&#182;</a></h4><h4 id="Inferring">Inferring<a class="anchor-link" href="#Inferring">&#182;</a></h4><h4 id="Transforming">Transforming<a class="anchor-link" href="#Transforming">&#182;</a></h4><h4 id="Expanding">Expanding<a class="anchor-link" href="#Expanding">&#182;</a></h4><h4 id="Social-companions-/-Chatbot">Social companions / Chatbot<a class="anchor-link" href="#Social-companions-/-Chatbot">&#182;</a></h4>
 </div>
 </div>
 </div>
