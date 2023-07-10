@@ -15190,7 +15190,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=001a10b6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0f4045b5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15198,11 +15198,9 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>Language modelling</li>
-<li>Inituition behind the transformer architecture</li>
 <li>The training and using of of ChatGPT on paper</li>
 <li>Using LLMs</li>
-<li>Prompt engineering</li>
-<li>Fine-tuning</li>
+<li>Prompt engineering and fine-tuning</li>
 </ul>
 
 </div>
@@ -15222,13 +15220,13 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=a46d325a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=98df1241" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="img/whatislm.jpg" alt="What is Language Model" width="500"/>
+<img src="img/whatislm.jpg" alt="What is Language Model" width="600"/>
 
 </div>
 </div>
@@ -15259,10 +15257,32 @@ $</p>
 \ \ \ \ \ \ \ 
 \Rightarrow P(w_T|w_1,w_2,\ldots,w_{T-1}) = \dfrac{P(w_1,w_2,\ldots,w_{T-1})}{P(w_1,w_2,\ldots,w_{T})}  
 $</p>
+<p><strong>Language model is a probability distribution over sequences of words.</strong></p>
+<p><strong>Language modelling is essentially a classification problem</strong></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=8e6e60c3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>The Generative part: Decoding</strong></p>
+<p>The output of the cat sentence as example:</p>
 <ul>
-<li>Language model is a probability distribution over sequences of words.</li>
-<li>Language modelling is essentially a classification problem</li>
+<li>Input: The cat sat on the ...</li>
+<li>Output: [mat(0.21), rug(0.17), chair(0.08), stairs(0.02), ... floor(0.005)]</li>
 </ul>
+<p>Which word should the model return?</p>
+<ul>
+<li>the most likely one: <em>mat</em> has the hightest probability</li>
+<li>top K or Top P: <em>[mat(0.21), rug(0.17), chair(0.08)]</em></li>
+<li>randomly sample over distribution: <em>[rug(0.17), floor(0.005)]</em></li>
+</ul>
+<p><strong>temperature</strong> is used to control the randomness of output</p>
 
 </div>
 </div>
@@ -15274,47 +15294,70 @@ $</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Examples-of-using-language-models">Examples of using language models<a class="anchor-link" href="#Examples-of-using-language-models">&#182;</a></h3><h4 id="speech-recognition">speech recognition<a class="anchor-link" href="#speech-recognition">&#182;</a></h4><p>$\ \ \ \ A=a_1, a_2, \ldots, a_m \ \ \ \ \ \ a_i\in{\mathcal{A}}$
-denote a sequence of acoustic symbols from audio signals</p>
-<p>$\ \ \ \ W = w_1,w2,\ldots, w_{n} \ \ \ \ \ \ w_i \in{\mathcal{W}}$
-denote a string of n words, each belonging to a fixed vocabulary $\mathcal{W}$</p>
-<p>The speech to text recogniser should decide in favor of a word string $W$ satisfying</p>
+<h3 id="Examples-of-using-language-models">Examples of using language models<a class="anchor-link" href="#Examples-of-using-language-models">&#182;</a></h3><p><strong>word suggestions</strong> when typing on your phone or Google search</p>
+<p><strong>speech recognition</strong> Given $A$ is a sequence of acoustic symbols and $W$ a string of words</p>
 <p>$\ \ \ \ \hat{W} = \underset{W}{argmax}\ P(W|A)$</p>
-<p>where $P(W|A)$ is the probability that the words $W$ were spoken, given the evidence $A$ was observed.</p>
 <p>Apply Bayes' rule $P(W|A) = \dfrac{P(W) \times P(A|W)}{P(A)}$:</p>
 <p>$
 \ \ \ \ \hat{W} = \underset{W}{argmax}\ P(W) \times P(A|W)
 $</p>
-<h4 id="Translations">Translations<a class="anchor-link" href="#Translations">&#182;</a></h4>
+<p><strong>Translations</strong></p>
+
 </div>
 </div>
 </div>
-</div></section></section><section ><section >
+</div><aside class="notes">
+
+<div id="cell-id=a4d0ad5a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The speech to text recogniser should decide in favor of a word string $W$ satisfying</p>
+<p>where $P(W|A)$ is the probability that the words $W$ were spoken, given the evidence $A$ was observed.</p>
+<p>$\ \ \ \ A=a_1, a_2, \ldots, a_m \ \ \ \ \ \ a_i\in{\mathcal{A}}$
+denote a sequence of acoustic symbols from audio signals</p>
+<p>$\ \ \ \ W = w_1,w2,\ldots, w_{n} \ \ \ \ \ \ w_i \in{\mathcal{W}}$
+denote a string of n words, each belonging to a fixed vocabulary $\mathcal{W}$</p>
+<p>Same for the machine translation problem: 
+The output is a probability across the target vocabulary and<br />
+it has computational access to the history.</p>
+<dl>
+<dt>The same language model part is also called <strong>decoder</strong>, which we will touch later.</dt>
+<dd>.</dd>
+</dl>
+
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section ><section >
 <div id="cell-id=410e4315" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Traditional-approach-to-language-modelling">Traditional approach to language modelling<a class="anchor-link" href="#Traditional-approach-to-language-modelling">&#182;</a></h3><ul>
-<li><p>Law of large numbers: counting in large corpus of text</p>
+<h3 id="Traditional-approach-to-language-modelling">Traditional approach to language modelling<a class="anchor-link" href="#Traditional-approach-to-language-modelling">&#182;</a></h3><img src="img/prehistory_dinosaur_02.png" alt="history" width=100>
+<ul>
+<li><p>Counting in large corpus of text ~ Law of large numbers!</p>
 </li>
 <li><p>A n-gram is a chunk of n consecutive words.</p>
 </li>
-<li><p>n-order Markov prpoerty assumption</p>
+<li><p>3-gram example:</p>
 </li>
 </ul>
 <p>$
-\ \ \ \ \ \ \ 
-P(w_T=m|w_1,w_2,\ldots,w_{T-3}, w_{T-2},w_{T-1}) \approx P(w_T=m|w_{T-3},w_{T-2},w_{T-1}), 3rd\ order\ estimation\ example
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ P(w_T=m|w_1,w_2,\ldots,w_{T-3}, w_{T-2},w_{T-1}) \\ 
+\ \ \ \ \ \ \ \ \ \approx P(w_T=m|w_{T-3},w_{T-2},w_{T-1})
 $</p>
 <ul>
 <li>Collect statistics about how frequent different n-grams are and use these to</li>
 </ul>
-<p>predict next word.
-$
-\ \ \ \ \ \ \ 
-\hat{p}(w_T=m|w_{T-3}, w_{T-2},w_{T-1}) =\dfrac{\#(w_{T-3},w_{T-2},w_{T-1}, w_{T})}{\#(w_{T-3},w_{T-2},w_{T-1})}
+<p>predict next word.</p>
+<p>$
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \hat{p}(w_T=m|w_{T-3}, w_{T-2},w_{T-1}) =\dfrac{\#(w_{T-3},w_{T-2},w_{T-1}, w_{T})}{\#(w_{T-3},w_{T-2},w_{T-1})}, \ \ \ \ \#(.): count
 $</p>
 <ul>
 <li>Smoothing techniques and other tricks to deal with sparsity problems</li>
@@ -15330,7 +15373,23 @@ $</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Neural-Networks-for-language-modelling">Neural Networks for language modelling<a class="anchor-link" href="#Neural-Networks-for-language-modelling">&#182;</a></h3><h4 id="MLP:-n-gram-of-words-as-input-(fixed-window)-and-the-probability-distribution-over-the-next-word-as-output">MLP: n-gram of words as input (fixed window) and the probability distribution over the next word as output<a class="anchor-link" href="#MLP:-n-gram-of-words-as-input-(fixed-window)-and-the-probability-distribution-over-the-next-word-as-output">&#182;</a></h4><h4 id="RNNs,-LSTM,-GRU">RNNs, LSTM, GRU<a class="anchor-link" href="#RNNs,-LSTM,-GRU">&#182;</a></h4><p><img src="img/rnn_01.png" alt="Alt text" title="RNN" /></p>
+<h3 id="Neural-Networks-for-language-modelling">Neural Networks for language modelling<a class="anchor-link" href="#Neural-Networks-for-language-modelling">&#182;</a></h3><p><strong>MLP</strong>: n-gram of words as input (fixed window) and the probability distribution over the next word as output</p>
+<img src="img/multiclass_softmax.webp" alt="Classification with softmax" width=600>
+<p><a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Ref: A Neural Probabilistic Language Model</a></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=a862d07a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>RNNs, LSTM, GRU</strong>
+<img src="img/rnn_01.png" alt="Alt text" title="RNN" /></p>
+<p><a href="https://arxiv.org/abs/1409.3215">Ref: Sequence to Sequence Learning with Neural Networks</a></p>
 
 </div>
 </div>
@@ -15361,14 +15420,16 @@ $</p>
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=a0d795a1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=23f6fb32" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Seq2seq">Seq2seq<a class="anchor-link" href="#Seq2seq">&#182;</a></h4><img src="img/seq_to_seq.png" alt="Sequence to Sequence architecture" width="600"/>
-<p><a href="https://web.stanford.edu/class/cs224n/">Ref:Standford CS224N: Natural Language Processing with Deep Learning</a></p>
+<p><strong>Sequence to sequence model</strong>
+|seq2seq model  | seq2seq unrolled over time|
+|:---:|:---:|
+|<img src="img/seq2seq_simple.webp" alt="seq2seq model" width="300"/>|<img src="img/seq2seq.webp" alt="seq2seq model" width="450"/>|</p>
 
 </div>
 </div>
@@ -15380,83 +15441,93 @@ $</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Transformer-Architecture">Transformer Architecture<a class="anchor-link" href="#Transformer-Architecture">&#182;</a></h4><img src="img/transformer.png" alt="Simplified Transformer" width="200"/>
+<h3 id="Transformer-Architecture">Transformer Architecture<a class="anchor-link" href="#Transformer-Architecture">&#182;</a></h3><img src="img/transformer.png" alt="Simplified Transformer" width="400"/>
+<p><a href="https://arxiv.org/abs/1706.03762">Ref: Attention Is All You Need</a></p>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=3841b8ae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6b2a1491" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Simplified Transformer</strong></p>
-<img src="img/transformer_simple.png" alt="Simplified transformer" width="500"/>
+<p>Transformer Step by Step</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center"></th>
+  <th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center"><img src="img/tf1.png" alt="Transformer step by step" width="400"/></td>
+  <td style="text-align:center"><img src="img/tf2.png" alt="Transformer step by step" width="400"/></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=44867611" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=49e1320f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="img/encoder_with_tensors_2.png" alt="Encoder" width="500"/>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center"></th>
+  <th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center"><img src="img/tf4.png" alt="Transformer step by step" width="400"/></td>
+  <td style="text-align:center"><img src="img/tf3.png" alt="Transformer step by step" width="400"/></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=937a7f92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=536bc3b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="img/self-attention-QKV-calculation-a.png" alt="Self attention" width="600"/>
+<p><strong>The Transformer Architecture</strong></p>
+<ul>
+<li>Removes the RNN completely</li>
+<li>Keeps the encoder-decoder architecture, and use attentions on both parts and between</li>
+<li>Uses the ResNet's structure: the skip connections to train deeper networks</li>
+<li>Uses the position encoding to encode the token's position information</li>
+<li>Use the input enbedding layer to learned vector representation of each word</li>
+</ul>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=1379e1ff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=efd7f33c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Intuition-of-the-attention-mechanism">Intuition of the attention mechanism<a class="anchor-link" href="#Intuition-of-the-attention-mechanism">&#182;</a></h5><p><strong>Collaborative filtering</strong> ~~ <strong>single head attention</strong></p>
-<img src="img/collaborative_filtering.webp" alt="Collaborative filtering" width="500"/>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=b4db5a87" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="img/transformer_QKV.svg" alt="Transformer Query key Value" width="500"/>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=1a15feb3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Multi head attention</strong> ~~ <strong>Context-aware collaborative filtering</strong></p>
-<img src="img/transformer_multi-headed_self-attention-recap.png" alt="Self attention" width="600"/>
-<p><strong>Context-aware collaborative filtering</strong>: Taking additional contextual information into consideration for similarity measure</p>
+<ul>
+<li>More details on training of the RNN and Transformer models will be covered in the future</li>
+<li>There are also some previous talks on these topics from [Deep learning Guild](link here) and [NLP Guild](link here)</li>
+</ul>
 
 </div>
 </div>
@@ -15536,7 +15607,7 @@ $</p>
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=314bbc31" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=25460d8d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15591,7 +15662,7 @@ $</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=30aa92ce" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9bab27ef" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15607,7 +15678,7 @@ the model assigns to the sequence of tokens in the corresponding response.</p>
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=19390bdc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c9e2a3a7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15623,7 +15694,7 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=99730b8e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8e423f28" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15636,7 +15707,7 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=4d66a34d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=603a8cca" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15685,7 +15756,7 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=b485f904" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=70c38836" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15784,7 +15855,7 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=757e8be3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7b22a2c4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15807,7 +15878,7 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=2590b3c7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4e4f6e0b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15857,13 +15928,14 @@ The moderations endpoint can check whether content complies with OpenAI's usage 
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=949638fc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=07b58593" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Enterprise-Architecture">Enterprise Architecture<a class="anchor-link" href="#Enterprise-Architecture">&#182;</a></h3><img src="img/googleArchitecture.png" alt="Using ChatGPT" width="500"/>
+<h3 id="Enterprise-Architecture">Enterprise Architecture<a class="anchor-link" href="#Enterprise-Architecture">&#182;</a></h3><p><strong>Google</strong></p>
+<img src="img/googleArchitecture_02.jpg" alt="Google Enterprise Architecture" width="600"/>
 
 </div>
 </div>
@@ -15883,7 +15955,7 @@ The moderations endpoint can check whether content complies with OpenAI's usage 
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=f36a177d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8fdc91e1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15899,7 +15971,7 @@ The moderations endpoint can check whether content complies with OpenAI's usage 
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=949221bf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d4faf45d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15921,7 +15993,7 @@ Neutral</p>
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=02e70568" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0a4684fd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15935,7 +16007,7 @@ Neutral</p>
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=4272971f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=cebe9390" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15955,7 +16027,7 @@ When we won the game, we all started to farduddle in celebration.</p>
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=738c8ec7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c0cb01cc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15971,7 +16043,7 @@ When we won the game, we all started to farduddle in celebration.</p>
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=4e741aa7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=52a20767" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15992,7 +16064,7 @@ Your task is to answer in a consistent style.<br />
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=3e0aa552" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d6f48581" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16007,7 +16079,7 @@ These describe step-by-step reasoning logic leading to the final answer with mor
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=2e70ed94" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=5cf11ec0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16032,7 +16104,7 @@ So the answer is 71.</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=3cf8a384" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4acd17a9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16055,7 +16127,7 @@ Finally, you ate 1 apple, so you would remain with 10 apples.</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=0b5932fe" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6359d73e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16069,7 +16141,7 @@ Finally, you ate 1 apple, so you would remain with 10 apples.</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=0004b828" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=760d1a6c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16083,7 +16155,7 @@ Finally, you ate 1 apple, so you would remain with 10 apples.</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=ab218153" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=97713c92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16105,7 +16177,7 @@ Medical history:<br />
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=c2c66e67" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d478fd41" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16125,7 +16197,7 @@ Medical history:<br />
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=4671943f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9ccbb626" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16142,7 +16214,7 @@ Medical history:<br />
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=4d8ee879" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=265ffae1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16158,7 +16230,7 @@ Medical history:<br />
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=956bcb6b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a6ce75c0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16171,7 +16243,7 @@ Medical history:<br />
 </div>
 </div>
 </div>
-<div id="cell-id=cb88f060" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b2ac961d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
