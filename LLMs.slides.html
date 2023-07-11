@@ -15226,7 +15226,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="img/whatislm.jpg" alt="What is Language Model" width="600"/>
+<img src="img/whatislm.jpg" alt="What is Language Model" width="700"/>
 
 </div>
 </div>
@@ -15353,11 +15353,10 @@ it has computational access to the history.</p>
 \ \ \ \ \ \ \ \ \ \approx P(w_T=m|w_{T-3},w_{T-2},w_{T-1})
 $</p>
 <ul>
-<li>Collect statistics about how frequent different n-grams are and use these to</li>
+<li>Collect statistics on different n-grams' frequency to estimate:</li>
 </ul>
-<p>predict next word.</p>
 <p>$
-\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \hat{p}(w_T=m|w_{T-3}, w_{T-2},w_{T-1}) =\dfrac{\#(w_{T-3},w_{T-2},w_{T-1}, w_{T})}{\#(w_{T-3},w_{T-2},w_{T-1})}, \ \ \ \ \#(.): count
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \hat{p}(w_T=m|w_{T-3}, w_{T-2},w_{T-1}) =\dfrac{\#(w_{T-3},w_{T-2},w_{T-1}, w_{T})}{\#(w_{T-3},w_{T-2},w_{T-1})} 
 $</p>
 <ul>
 <li>Smoothing techniques and other tricks to deal with sparsity problems</li>
@@ -15374,7 +15373,7 @@ $</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Neural-Networks-for-language-modelling">Neural Networks for language modelling<a class="anchor-link" href="#Neural-Networks-for-language-modelling">&#182;</a></h3><p><strong>MLP</strong>: n-gram of words as input (fixed window) and the probability distribution over the next word as output</p>
-<img src="img/multiclass_softmax.webp" alt="Classification with softmax" width=600>
+<img src="img/multiclass_softmax.webp" alt="Last layer of classification with softmax" width=700>
 <p><a href="https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf">Ref: A Neural Probabilistic Language Model</a></p>
 
 </div>
@@ -15387,8 +15386,13 @@ $</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>RNNs, LSTM, GRU</strong>
-<img src="img/rnn_01.png" alt="Alt text" title="RNN" /></p>
+<p><strong>RNNs, LSTM, GRU</strong></p>
+<img src="img/rnn_01.png" alt="RNN" width=600>
+<hr />
+<p><strong>Sequence to sequence model</strong>
+|seq2seq model  | seq2seq unrolled over time|
+|:---:|:---:|
+|<img src="img/seq2seq_simple.webp" alt="seq2seq model" width="300"/>|<img src="img/seq2seq.webp" alt="seq2seq model" width="450"/>|</p>
 <p><a href="https://arxiv.org/abs/1409.3215">Ref: Sequence to Sequence Learning with Neural Networks</a></p>
 
 </div>
@@ -15420,21 +15424,6 @@ $</p>
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=23f6fb32" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Sequence to sequence model</strong>
-|seq2seq model  | seq2seq unrolled over time|
-|:---:|:---:|
-|<img src="img/seq2seq_simple.webp" alt="seq2seq model" width="300"/>|<img src="img/seq2seq.webp" alt="seq2seq model" width="450"/>|</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
 <div id="cell-id=260ed3da" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15448,13 +15437,13 @@ $</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=6b2a1491" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e06cd338" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Transformer Step by Step</p>
+<p>Transformer overview</p>
 <table>
 <thead>
 <tr>
@@ -15467,27 +15456,6 @@ $</p>
   <td style="text-align:center"><img src="img/tf1.png" alt="Transformer step by step" width="400"/></td>
   <td style="text-align:center"><img src="img/tf2.png" alt="Transformer step by step" width="400"/></td>
 </tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=49e1320f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table>
-<thead>
-<tr>
-  <th style="text-align:center"></th>
-  <th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
 <tr>
   <td style="text-align:center"><img src="img/tf4.png" alt="Transformer step by step" width="400"/></td>
   <td style="text-align:center"><img src="img/tf3.png" alt="Transformer step by step" width="400"/></td>
@@ -15499,7 +15467,7 @@ $</p>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=536bc3b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=efd7f33c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15513,20 +15481,10 @@ $</p>
 <li>Uses the position encoding to encode the token's position information</li>
 <li>Use the input enbedding layer to learned vector representation of each word</li>
 </ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=efd7f33c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr />
 <ul>
 <li>More details on training of the RNN and Transformer models will be covered in the future</li>
-<li>There are also some previous talks on these topics from [Deep learning Guild](link here) and [NLP Guild](link here)</li>
+<li>Previous talks on these topics from <a href="https://www.google.com"><strong>Deep learning Guild</strong></a> and <a href="https://www.google.com"><strong>NLP Guild</strong></a></li>
 </ul>
 
 </div>
@@ -15540,13 +15498,32 @@ $</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Large-Language-Models-(LLMs)">Large Language Models (LLMs)<a class="anchor-link" href="#Large-Language-Models-(LLMs)">&#182;</a></h3><ul>
-<li>LLMs are language model consisting of billions parameters</li>
-<li>Trained on trillions of tokens</li>
-<li>Take advantages of parallel computing based on the transformer architectures</li>
-<li>Become general purpose models that excel at a wide range of tasks</li>
-<li>Implicitly learned syntax and semantics of human language, the general &quot;knowledge&quot; about the world</li>
+<li>Take advantages of parallel computing based on the transformer architecture</li>
+<li>Trained on massive datasets of text (<strong>trillions of tokens</strong>, Internet scale)</li>
+<li>Transformers with <strong>billions parameters</strong></li>
+<li>Thousand of latest GPUs, months of training, and cost millions</li>
 </ul>
-<p><img src="img/TypeOfLLMs.png" alt="Alt text" title="Type of LLMs" /></p>
+<hr />
+<ul>
+<li>Implicitly learned syntax and semantics of human language, the general knowledge and &quot;understanding&quot; about the world</li>
+<li>Become general purpose models that excel at a wide range of tasks</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=9f129870" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Types-of-LLMs">Types of LLMs<a class="anchor-link" href="#Types-of-LLMs">&#182;</a></h3><img src="img/TypeOfLLMs.png" alt="Type of LLMs" width=800>
+<ul>
+<li>Discriminative LM: predict next word in a sequence of words based on previous words</li>
+<li>Generative LM: Generate text by sampling from the probability distribution over sequence of words</li>
+</ul>
 
 </div>
 </div>
@@ -15563,6 +15540,8 @@ $</p>
 <li>Supervised Fine Tuning</li>
 <li>Reinforcement Learning from Human Feedback (RLHF)</li>
 </ul>
+<img src="img/chatgpt-training_1.png" alt="Training of chatGPT" width=700>
+<p><a href="https://huyenchip.com/2023/05/02/rlhf.html">Ref: Chip Huyen's Blog</a></p>
 
 </div>
 </div>
@@ -15578,10 +15557,11 @@ $</p>
 <ul>
 <li>Supervised learning on unlabled data</li>
 <li>Trained on vast amont of data (1 trillion tokens are equivalent to 15 million books)</li>
-<li>We’ll run out of Internet data in the next few years with this this trend of data consuming</li>
+<li>Will run out of Internet data in the next few years with this trend of data consumption</li>
 <li>Many companies have changed their data terms to prevent others from scraping their data for LLMs</li>
-<li>The Internet is being rapidly populated with LLM generated data</li>
+<li>99% of the computing time and flops are used on this pre-trainig step</li>
 </ul>
+<p><a href="https://arxiv.org/pdf/2302.13971.pdf">Ref: LLaMA: Open and Efficient Foundation Language Models</a></p>
 
 </div>
 </div>
@@ -15595,7 +15575,7 @@ $</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Shoggoth with a smiley face analogy</strong></p>
 <ul>
-<li>The pretrained model is an untamed monster because it was trained on indiscriminate data scraped from the Internet</li>
+<li>The pretrained model is an untamed monster</li>
 <li>This monster was then finetuned on higher quality data</li>
 <li>Then the finetuned model was further polished using RLHF to make it customer-appropriate</li>
 </ul>
@@ -15614,11 +15594,13 @@ $</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>The pretrained model is an untamed monster because it was trained on</li>
+<li>The pretrained model is an untamed monster because<ul>
+<li>it learned the powerful general representations</li>
+<li>it's not trained on specific useful tasks</li>
+<li>it was trained on indiscriminate data scraped from the Internet: misinformation, propaganda, conspiracy theories, or attacks against certain demographics.</li>
 </ul>
-<p>indiscriminate data scraped from the Internet: misinformation, propaganda, conspiracy theories, or attacks against certain demographics.</p>
-<ul>
-<li>This monster was then finetuned on higher quality data –</li>
+</li>
+<li>This monster needs to be finetuned on higher quality data –</li>
 </ul>
 <p>StackOverflow, Quora and human annotations – which makes it somewhat socially acceptable.</p>
 <ul>
@@ -15640,7 +15622,7 @@ $</p>
 <li>To optimize the pretrained model to generate useful responses</li>
 <li>To show the language model examples of how to appropriately respond</li>
 <li>To relieve the user burden of design their own prompts (<a href="https://arxiv.org/abs/2005.14165">GPT3 is a few-shot learner</a>)</li>
-<li>OpenAI hire 40 high quality labelers to create around 13,000 (prompt, response) pairs for InstructGPT.</li>
+<li>OpenAI hire 40+ high quality labelers to create around 13,000 <strong>(prompt, response) pairs</strong> for InstructGPT.</li>
 <li>Prompts are designed for different use cases (e.g. question answering, summarization, translation)</li>
 </ul>
 <p>Example training dataset: <a href="https://arxiv.org/pdf/2203.02155.pdf">Training language models to follow instructions with human feedback, page 26~33</a></p>
@@ -15649,14 +15631,36 @@ $</p>
 </div>
 </div>
 </div>
-</div></section></section><section ><section >
+</div><aside class="notes">
+
+<div id="cell-id=e3dbdad1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>First part of the alignment is the Supervised Fine Tuning:</p>
+<ul>
+<li>High quality labelers provide demonstrations of the desired</li>
+</ul>
+<p>behaviour on the input prompt distribution</p>
+<ul>
+<li>Fine-tune a pretrained GPT-3 model on this data using supervised learning.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section ><section >
 <div id="cell-id=bda0013a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="img/ChatGPT_SFT.png" alt="Supervised Fine Tunning and RLHF" width=600>
+<img src="img/ChatGPT_SFT.png" alt="Supervised Fine Tunning and RLHF" width=700>
+<p><a href="https://arxiv.org/abs/2203.02155">Ref: Training language models to follow instructions with human feedback</a></p>
 
 </div>
 </div>
@@ -15671,7 +15675,7 @@ $</p>
 <h3 id="Reinforcement-Learning-from-Human-Feedback-(RLHF)">Reinforcement Learning from Human Feedback (RLHF)<a class="anchor-link" href="#Reinforcement-Learning-from-Human-Feedback-(RLHF)">&#182;</a></h3><p><strong>The goal of Alignment</strong></p>
 <p>Given a particular history, the objective is to maximise the probability 
 the model assigns to the sequence of tokens in the corresponding response.</p>
-<img src="img/imitation_game.jpeg" alt="The goal of Alignment" width="400"/>
+<img src="img/imitation_game.jpeg" alt="The goal of Alignment" width="700"/>
 
 </div>
 </div>
@@ -15684,10 +15688,21 @@ the model assigns to the sequence of tokens in the corresponding response.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This can be viewed as a typical <strong>imitation learning</strong> setup, or <strong>behaviour cloning</strong><br />
-where we try to mimic an teachers'action distribution conditioned on an input state</p>
+<p><strong>The goal of Alignment</strong> is kind of <strong>Brainwashing</strong>.</p>
+<p><strong>RLFH</strong> Originally developed for training simple robots in simulated environments and Atari
+games  it has recently been applied to fine-tuning language models</p>
 <p>Teach the model by having it mimic how humans respond in conversations.<br />
 The model then creates an <strong>expert policy</strong>, which acts like a rule book for how the model should respond to requests.</p>
+<ul>
+<li>Step 1: Collect comparison data, and train a reward model.<ul>
+<li>For a given input, use the existing model to generate several outputs</li>
+<li>Labelers then indicate which output they prefer by ranking the outputs</li>
+</ul>
+</li>
+<li>Train a reward model to predict the human-preferred output.</li>
+<li>Optimize a policy against the reward model using PPO.</li>
+</ul>
+<p>The output of the Reward Model is a scalar as reward. The supervised policy is fine-tuned to  optimize this reward using the PPO algorithm.</p>
 
 </div>
 </div>
@@ -15700,8 +15715,8 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Reward-model">Reward model<a class="anchor-link" href="#Reward-model">&#182;</a></h4><p><strong>Logistic Regression for Scorecard</strong></p>
-<img src="img/reward_model.jpeg" alt="Reward model" width="400"/>
+<h4 id="Reward-model">Reward model<a class="anchor-link" href="#Reward-model">&#182;</a></h4><img src="img/reward_model.jpeg" alt="Reward model" width="500"/>
+<p><strong>Logistic Regression for Scorecard</strong></p>
 
 </div>
 </div>
@@ -15714,10 +15729,10 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h4 id="Proximal-Policy-Optimization">Proximal Policy Optimization<a class="anchor-link" href="#Proximal-Policy-Optimization">&#182;</a></h4><ul>
-<li>Policy</li>
+<li>Policy is the mapping from action space to state space</li>
 <li>Policy gradient optimization algorithm for updating an existing policy to gain reward</li>
 </ul>
-<img src="img/policy_model.png" alt="Policy model" width="400"/>
+<img src="img/policy_model.png" alt="Policy model" width="600"/>
 <p><a href="https://www.youtube.com/watch?v=VPRSBzXzavo">ref: How ChatGPT is Trained</a></p>
 
 </div>
@@ -15750,7 +15765,8 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Performance">Performance<a class="anchor-link" href="#Performance">&#182;</a></h3><img src="img/PPO_performance.png" alt="Human evaluations of various models' performance" width=600>
+<h3 id="Performance">Performance<a class="anchor-link" href="#Performance">&#182;</a></h3><img src="img/PPO_performance_02.png" alt="Human evaluations of various models' performance" width=700>
+<p><a href="https://arxiv.org/abs/2203.02155">Ref: Training language models to follow instructions with human feedback</a></p>
 
 </div>
 </div>
@@ -15762,8 +15778,9 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="img/chatgpt-training_1.png" alt="Training of chatGPT" width=700>
-<p><a href="https://huyenchip.com/2023/05/02/rlhf.html">Ref: Chip Huyun's Blob</a></p>
+<p>Recap</p>
+<img src="img/chat_GPT_training_pipeline.png" alt="Training of chatGPT" width=700>
+<p><a href="https://www.youtube.com/watch?v=bZQun8Y4L2A">Ref: Andrew Karpathy's Microsoft BUILD Talk: State of GPT</a></p>
 
 </div>
 </div>
@@ -15775,55 +15792,30 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="The-Process-of-using-ChatGPT">The Process of using ChatGPT<a class="anchor-link" href="#The-Process-of-using-ChatGPT">&#182;</a></h2><img src="img/usingChatGPT.png" alt="Using ChatGPT" width="400"/>
+<h2 id="The-Process-of-using-ChatGPT">The Process of using ChatGPT<a class="anchor-link" href="#The-Process-of-using-ChatGPT">&#182;</a></h2><img src="img/usingChatGPT.png" alt="Using ChatGPT" width="500"/>
 <p><strong>Content Moderation!</strong></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=20ce8361" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Debatable-Topics-and-Pitfalls-of-LLMs">Debatable Topics and Pitfalls of LLMs<a class="anchor-link" href="#Debatable-Topics-and-Pitfalls-of-LLMs">&#182;</a></h2><p>LLMs are extremely powerful, but it is debatable on what they are actually doing.</p>
-<ul>
-<li><strong>Stochastic parrot?</strong></li>
-<li><strong>Emergent abilities</strong></li>
-<li><strong>Hallucinations</strong></li>
-<li><strong>Bias</strong>:</li>
-<li><strong>Citing Sources on generations</strong></li>
-<li><strong>Prompt Hacking</strong></li>
-</ul>
 
 </div>
 </div>
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=96c98c18" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=fcd627fd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>OpenAI's <strong>Moderation</strong> API</p>
+<p>The moderations endpoint can check whether content complies with OpenAI's usage policies.</p>
+<p>The models classifies the following categories:</p>
 <ul>
-<li><p><strong>Stochastic parrot or not?</strong>: Although large language models are good at generating convincing language, many people believe LLMa do not actually understand the meaning of the language it is processing</p>
-</li>
-<li><p><strong>Emergent abilities</strong>: Emergent abilities are skills that suddenly and unpredictably show up (emerge) in AI systems. Theese abilities are not present in smaller models but it seems that there are qualitative changes that come from scaling the AI language models. There are greate debate on how to define and how to measure them.</p>
-</li>
-<li><p><strong>Hallucinations</strong>: LLMs will frequently generate falsehoods when asked a question that they do not know the answer to. Sometimes they will state that they do not know the answer, but much of the time they will confidently give a wrong answer.</p>
-</li>
-<li><p><strong>Bias</strong>: LLMs are often biased towards generating stereotypical responses. Even with safe guards in place, they will sometimes say sexist/racist/homophobic things. Be careful when using LLMs in consumer-facing applications, and also be careful when using them in research (they can generate biased results).</p>
-</li>
-<li><p><strong>Citing Sources</strong>: LLMs for the most part cannot accurately cite sources. This is because they do not have access to the Internet, and do not exactly remember where their information came from. They will frequently generate sources that look good, but are entirely inaccurate.</p>
-</li>
-</ul>
-<p>(Strategies like search augmented LLMs can often fix this problem)</p>
-<ul>
-<li><strong>Prompt Hacking</strong>:  Users can often trick LLMs into generating any content they want.</li>
+<li>hate</li>
+<li>hate/threatening</li>
+<li>harassment</li>
+<li>self-harm, self-harm/intent, self-harm/instructions</li>
+<li>sexual sexual services sexual/minors</li>
+<li>violence violence/graphic</li>
 </ul>
 
 </div>
@@ -15844,11 +15836,8 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 <h3 id="Applications">Applications<a class="anchor-link" href="#Applications">&#182;</a></h3><ul>
 <li>Search</li>
 <li>Generative</li>
-<li>Summarise</li>
-<li>Rewrite</li>
-<li>Extract</li>
-<li>Classify</li>
-<li>Cluster</li>
+<li>Summarise, Rewrite, Extract</li>
+<li>Classify, Cluster</li>
 </ul>
 
 </div>
@@ -15887,17 +15876,6 @@ The model then creates an <strong>expert policy</strong>, which acts like a rule
 <p><strong>Model-as-a-Service via API</strong></p>
 <p>The Embeddings API is a powerful tool that can be used to improve the performance of a variety of applications.
 It can be used for a variety of tasks, such as search, clustering, recommendations, and anomaly detection.</p>
-<p><strong>Moderation</strong> API
-The moderations endpoint can check whether content complies with OpenAI's usage policies.</p>
-<p>The models classifies the following categories:</p>
-<ul>
-<li>hate</li>
-<li>hate/threatening</li>
-<li>harassment</li>
-<li>self-harm, self-harm/intent, self-harm/instructions</li>
-<li>sexual sexual services sexual/minors</li>
-<li>violence violence/graphic</li>
-</ul>
 <p><strong>Fine-tune an existing third-party Model in a managed environment via API</strong></p>
 <p><strong>Advantages for both above approaches</strong></p>
 <ul>
@@ -15928,19 +15906,6 @@ The moderations endpoint can check whether content complies with OpenAI's usage 
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=07b58593" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Enterprise-Architecture">Enterprise Architecture<a class="anchor-link" href="#Enterprise-Architecture">&#182;</a></h3><p><strong>Google</strong></p>
-<img src="img/googleArchitecture_02.jpg" alt="Google Enterprise Architecture" width="600"/>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
 <div id="cell-id=424a601d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15977,156 +15942,46 @@ The moderations endpoint can check whether content complies with OpenAI's usage 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Zero-shot-Prompting">Zero-shot Prompting<a class="anchor-link" href="#Zero-shot-Prompting">&#182;</a></h4><p>An example below from ChatGPT:</p>
-<blockquote>
-<p>Prompt: 
-Classify the text into neutral, negative, or positive.</p>
-</blockquote>
-<p>Text: I think the movie is okay.</p>
-<blockquote>
-<p>Output: 
-Neutral</p>
-</blockquote>
-
+<h3 id="Zero-shot-Prompting">Zero-shot Prompting<a class="anchor-link" href="#Zero-shot-Prompting">&#182;</a></h3><h3 id="Few-shot-Prompting-(In-context-Learning)">Few-shot Prompting (In-context Learning)<a class="anchor-link" href="#Few-shot-Prompting-(In-context-Learning)">&#182;</a></h3><h3 id="Chain-of-Thought-Prompting">Chain-of-Thought Prompting<a class="anchor-link" href="#Chain-of-Thought-Prompting">&#182;</a></h3>
 </div>
 </div>
 </div>
 </div><aside class="notes">
 
-<div id="cell-id=0a4684fd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Zero-shot Prompting</strong></p>
-<p>Zero-shot learning involves feeding the task to LLMs without any examples that indicate the desired output, hence the name zero-shot. For example, one could just feed a model a sentence and expect it to output the sentiment of that sentence.</p>
-
-</div>
-</div>
-</div>
-</div>
-</aside></section></section><section ><section >
-<div id="cell-id=cebe9390" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Few-shot-Prompting">Few-shot Prompting<a class="anchor-link" href="#Few-shot-Prompting">&#182;</a></h4><p>Providing the model with a small number of high-quality examples that include both input and desired output for the target task.</p>
-<blockquote>
-<p>Prompt:<br />
-A &quot;whatpu&quot; is a small, furry animal native to Tanzania. An example of a sentence that uses the word whatpu is:  We were traveling in Africa and we saw these very cute whatpus.<br />
-To do a &quot;farduddle&quot; means to jump up and down really fast. An example of a sentence that uses the word farduddle is:</p>
-<p>Output:<br />
-When we won the game, we all started to farduddle in celebration.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div><aside class="notes">
-
-<div id="cell-id=c0cb01cc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Few-shot Prompting</strong></p>
-<p>Few-shot learning, on the other hand, involves providing the model with a small number of high-quality examples that include both input and desired output for the target task. By seeing these good examples, the model can better understand the user's intention and criteria for generating accurate outputs. As a result, few-shot learning often leads to better performance compared to zero-shot learning. However, this approach can consume more tokens and may encounter context length limitations when dealing with long input and output text.</p>
-<p>This kind of <em>in-context learning</em> using few-shot prompting by offering demonstrations in the prompt can guide the LLM to carry out the task. In other words, conditioning the model on a selection of task-specific examples helps improve the model’s performance.</p>
-<p>Here is an example:</p>
-
-</div>
-</div>
-</div>
-</div>
-</aside></section></section><section ><section >
-<div id="cell-id=52a20767" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote>
-<p>Prompt:<br />
-Your task is to answer in a consistent style.<br />
-&lt;child&gt;: Teach me about patience.<br />
-&lt;grandparent&gt;: The river that carves the deepest valley flows from a modest spring; the grandest symphony originates from a single note; the most intricate tapestry begins with a solitary thread.</p>
-<p>&lt;child&gt;: Teach me about resilience.</p>
-<p>Outputs:<br />
-&lt;grandparent&gt;: Resilience is like a tree that bends with the wind but never breaks. It is the ability to bounce back from adversity and keep moving forward, even when things get tough. Just like a tree that grows stronger with each storm it weathers, resilience is a quality that can be developed and strengthened over time.</p>
-</blockquote>
-<p>In both cases, the model was given one example and then was able to generate the answer for the next.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
 <div id="cell-id=d6f48581" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Chain-of-Thought-Prompting">Chain-of-Thought Prompting<a class="anchor-link" href="#Chain-of-Thought-Prompting">&#182;</a></h3><p>Chain-of-Thought (CoT) prompting generates a sequence of short sentences known as <strong>reasoning chains</strong>.
-These describe step-by-step reasoning logic leading to the final answer with more benefits seen for complex reasoning tasks.</p>
-<img src="img/cot.webp" alt="CoT" width="800"/>
-<p>Ref and image soure:<a href="https://arxiv.org/abs/2201.11903">Wei et al. (2022)</a></p>
+<p><strong>Zero-shot Prompting</strong></p>
+<p>Zero-shot learning involves feeding the task to LLMs without any examples that indicate the desired output,<br />
+hence the name zero-shot.</p>
+<p>For example, one could just feed a model a sentence and expect it to output the sentiment of that sentence.</p>
+<p><strong>Few-shot Prompting</strong></p>
+<p>Few-shot learning, on the other hand, involves providing the model with a small<br />
+number of high-quality examples that include both input and desired output for<br />
+the target task.<br />
+By seeing these good examples, the model can better understand the user's intention<br />
+and criteria for generating accurate outputs.</p>
+<p>As a result, few-shot learning often leads to better performance compared to<br />
+zero-shot learning.<br />
+However, this approach can consume more tokens and may encounter context length<br />
+limitations when dealing with long input and output text.</p>
+<p>This kind of <em>in-context learning</em> using few-shot prompting by offering<br />
+demonstrations in the prompt can guide the LLM to carry out the task. In other words,<br />
+conditioning the model on a selection of task-specific examples helps<br />
+improve the model’s performance.</p>
+<p><strong>Chain-of-Thought (CoT) prompting</strong></p>
+<p>Chain-of-Thought prompting generates a sequence of short sentences known as<br />
+<strong>reasoning chains</strong>. These describe step-by-step reasoning logic leading to<br />
+the final answer with more benefits seen for complex reasoning tasks.</p>
 
 </div>
 </div>
 </div>
-</div></section></section><section ><section >
-<div id="cell-id=5cf11ec0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Few-shot-CoT">Few-shot CoT<a class="anchor-link" href="#Few-shot-CoT">&#182;</a></h4><blockquote>
-<p>Prompt<br />
-<strong>Question</strong>: Tom and Elizabeth have a competition to climb a hill. Elizabeth takes 30 minutes to climb the hill. Tom takes four times as long as Elizabeth does to climb the hill. How many hours does it take Tom to climb up the hill?<br />
-<strong>Answer</strong>: It takes Tom $30*4 = 120$ minutes to climb the hill.<br />
-It takes Tom $120/60 = 2$ hours to climb the hill.<br />
-So the answer is 2.</p>
-<p><strong>Question</strong>: Jack is a soccer player. He needs to buy two pairs of socks and a pair of soccer shoes. Each pair of socks cost £9.50, and the shoes cost £92. Jack has £40. How much more money does Jack need?<br />
-<strong>Answer</strong>: The total cost of two pairs of socks is $9.50*2 = 19$.<br />
-The total cost of the socks and the shoes is $19+92 = 111$.<br />
-Jack need $111-40 = 71$ more.<br />
-So the answer is 71.</p>
-<p><strong>Question</strong>: Marty has 100 centimeters of ribbon that he must cut into 4 equal parts. Each of the cut parts must be divided into 5 equal parts. How long will each final cut be?<br />
-<strong>Answer</strong>:</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=4acd17a9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Zero-shot-CoT">Zero-shot CoT<a class="anchor-link" href="#Zero-shot-CoT">&#182;</a></h4><p>Zero-shot CoT can be achieved by simplely appending <strong>“Let’s think step by step”</strong> to the prompt.</p>
-<blockquote>
-<p>Prompt:<br />
-I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples did I remain with?<br />
-<strong>Let's think step by step.</strong></p>
-<p>Output:<br />
-First, you started with 10 apples.<br />
-You gave away 2 apples to the neighbor and 2 to the repairman, so you had 6 apples left.<br />
-Then you bought 5 more apples, so now you had 11 apples.<br />
-Finally, you ate 1 apple, so you would remain with 10 apples.</p>
-</blockquote>
-<p>Amazing!</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
+</aside></section></section><section ><section >
 <div id="cell-id=6359d73e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16141,36 +15996,32 @@ Finally, you ate 1 apple, so you would remain with 10 apples.</p>
 </div>
 </div>
 </div></section></section><section ><section >
+<div id="cell-id=9ccbb626" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="A-variety-of-fancy-prompting-ideas">A variety of fancy prompting ideas<a class="anchor-link" href="#A-variety-of-fancy-prompting-ideas">&#182;</a></h3><ul>
+<li>ReAct: Combines <strong>Re</strong>asoning and <strong>Act</strong>ing with LLMs.<br />
+  <em>&quot;What's the age of the universe?&quot; -&gt; &quot;I need to find more information on the universe&quot; -&gt; &quot;[search on Wikipedia]&quot;</em></li>
+<li>Code as Reasoning: When given a question, try to write code that solves this question. Then send the code to a programmatic runtime to get the result.</li>
+<li>Automatic Prompt Design: Automating the generation and selection of prompts.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
 <div id="cell-id=760d1a6c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Formalising-Prompts">Formalising Prompts<a class="anchor-link" href="#Formalising-Prompts">&#182;</a></h4><p>There are a few parts of a prompt that are quite common:</p>
+<h3 id="Formalising-Prompts">Formalising Prompts<a class="anchor-link" href="#Formalising-Prompts">&#182;</a></h3><p>There are a few parts of a prompt that are quite common:</p>
 <img src="img/PromptParts.png" alt="Formal prompt" width=150>
 <p><a href="https://learnprompting.org/docs/basics/formalizing">Ref and image source: Learning Prompting</a></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=97713c92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>An example:</p>
-<blockquote>
-<p>Prompt:<br />
-Medical history:<br />
---- January 1, 2000: Fractured right arm playing basketball. Treated with a cast.<br />
---- February 15, 2010: Diagnosed with hypertension. Prescribed lisinopril.<br />
---- September 10, 2015: Developed pneumonia. Treated with antibiotics and recovered fully.<br />
---- March 1, 2022: Sustained a concussion in a car accident. Admitted to the hospital and monitored for 24 hours.</p>
-<p>You are a doctor. Read this medical history and predict risks for the patient:</p>
-</blockquote>
 
 </div>
 </div>
@@ -16197,23 +16048,6 @@ Medical history:<br />
 </div>
 </div>
 </aside></section></section><section ><section >
-<div id="cell-id=9ccbb626" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="A-variety-of-fancy-prompting-ideas">A variety of fancy prompting ideas<a class="anchor-link" href="#A-variety-of-fancy-prompting-ideas">&#182;</a></h3><ul>
-<li>ReAct: Combines <strong>Re</strong>asoning and <strong>Act</strong>ing with LLMs.<br />
-  <em>&quot;What's the age of the universe?&quot; -&gt; &quot;I need to find more information on the universe&quot; -&gt; &quot;[search on Wikipedia]&quot;</em></li>
-<li>Code as Reasoning: When given a question, try to write code that solves this question. Then send the code to a programmatic runtime to get the result.</li>
-<li>Automatic Prompt Design: Automating the generation and selection of prompts.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
 <div id="cell-id=265ffae1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16224,7 +16058,7 @@ Medical history:<br />
 <li>Task specific tuning can make LLMs more suitable for domain problems and more reliable</li>
 <li>Further train the model on new data</li>
 </ul>
-<h3 id="Fine-tuning-the-model">Fine-tuning the model<a class="anchor-link" href="#Fine-tuning-the-model">&#182;</a></h3><img src="img/model_tuning.jpg" alt="Prompt tuning" width="400"/>
+<h3 id="Parameter-Efficient-Fine-tuning-(PEFT)">Parameter-Efficient Fine-tuning (PEFT)<a class="anchor-link" href="#Parameter-Efficient-Fine-tuning-(PEFT)">&#182;</a></h3><img src="img/model_tuning.jpg" alt="Model tuning" width="400"/>
 
 </div>
 </div>
@@ -16236,14 +16070,126 @@ Medical history:<br />
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Parameter-Efficient-Tuning-Methods-(PETM)">Parameter-Efficient Tuning Methods (PETM)<a class="anchor-link" href="#Parameter-Efficient-Tuning-Methods-(PETM)">&#182;</a></h3><p><strong>Prompt Tuning</strong>: Tune a vector that get sent prepended to the input text</p>
+<h3 id="Prompt-Tuning">Prompt Tuning<a class="anchor-link" href="#Prompt-Tuning">&#182;</a></h3><p>Tune a vector that get sent prepended to the input text</p>
 <img src="img/prompt_tuning.jpg" alt="Prompt tuning" width="400"/>
 
 </div>
 </div>
 </div>
+</div><aside class="notes">
+
+<div id="cell-id=1eef7c67" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Parameter-efficient fine-tuning</strong> is a method of fine-tuning that<br />
+focuses on training only a subset of the pre-trained model’s parameters.<br />
+This approach involves identifying the most important parameters for the<br />
+new task and only updating those parameters during training. Doing so,<br />
+PEFT can significantly reduce the computation required for fine-tuning.</p>
+<p><strong>Prompt-tuning</strong> is an efficient, low-cost way of adapting a LLM to new<br />
+downstream tasks without retraining the model and updating its weights.</p>
+
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section ><section >
+<div id="cell-id=20ce8361" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Debatable-Topics-and-Pitfalls-of-LLMs">Debatable Topics and Pitfalls of LLMs<a class="anchor-link" href="#Debatable-Topics-and-Pitfalls-of-LLMs">&#182;</a></h2><p>LLMs are extremely powerful, but it is debatable on what they are actually doing.</p>
+<ul>
+<li>Stochastic parrot</li>
+<li>Emergent abilities</li>
+<li>Citing sources on generations</li>
+<li>Hallucinations</li>
+<li>Bias</li>
+<li>Prompt Hacking</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div id="cell-id=96c98c18" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><p><strong>Stochastic parrot or not?</strong>: Although large language models are good at generating convincing language, many people believe LLMa do not actually understand the meaning of the language it is processing</p>
+</li>
+<li><p><strong>Emergent abilities</strong>: Emergent abilities are skills that suddenly and unpredictably show up (emerge) in AI systems. Theese abilities are not present in smaller models but it seems that there are qualitative changes that come from scaling the AI language models. There are greate debate on how to define and how to measure them.</p>
+</li>
+<li><p><strong>Hallucinations</strong>: LLMs will frequently generate falsehoods when asked a question that they do not know the answer to. Sometimes they will state that they do not know the answer, but much of the time they will confidently give a wrong answer.</p>
+</li>
+<li><p><strong>Bias</strong>: LLMs are often biased towards generating stereotypical responses. Even with safe guards in place, they will sometimes say sexist/racist/homophobic things. Be careful when using LLMs in consumer-facing applications, and also be careful when using them in research (they can generate biased results).</p>
+</li>
+<li><p><strong>Citing Sources</strong>: LLMs for the most part cannot accurately cite sources. This is because they do not have access to the Internet, and do not exactly remember where their information came from. They will frequently generate sources that look good, but are entirely inaccurate.</p>
+</li>
+</ul>
+<p>(Strategies like search augmented LLMs can often fix this problem)</p>
+<ul>
+<li><strong>Prompt Hacking</strong>:  Users can often trick LLMs into generating any content they want.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</aside></section></section><section ><section >
 <div id="cell-id=b2ac961d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Recap</strong></p>
+<ul>
+<li>Language modelling is to learn the probability distribution of word sequences</li>
+<li>Transformers are by far the latest and best way to learn this distribution</li>
+<li>LLMs become general purpose models that excel at a wide range of tasks</li>
+<li>Proper prompts / tuning can condition the generative model before query to extract uesful information</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=a213dc87" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="img/message_from_Bard.png" alt="alt text" title="message from Bard" /></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=2aaef14a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Questions-and-Discussion">Questions and Discussion<a class="anchor-link" href="#Questions-and-Discussion">&#182;</a></h2><img src="img/questions_discussion.png" alt="Questions and Discussions" width=300>
+
+</div>
+</div>
+</div>
+</div><aside class="notes">
+
+<div id="cell-id=2c150ed2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16253,7 +16199,8 @@ Medical history:<br />
 </div>
 </div>
 </div>
-</div></section></section>
+</div>
+</aside></section></section>
 </div>
 </div>
 </body>
